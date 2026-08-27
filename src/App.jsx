@@ -55,7 +55,7 @@ function App() {
   return (
     <main className="page-shell">
       <header className="site-header">
-        <span className="mark" aria-hidden="true">Q</span>
+        <img className="mark" src="/e67df28d-372e-4c9d-a287-ae661730fbbe.png" alt="The Daily Pause" />
         <span className="brand">The daily pause</span>
         <span className="issue">No. 0{quoteIndex + 1}</span>
       </header>

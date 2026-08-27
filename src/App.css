@@ -2,7 +2,7 @@
 .page-shell { min-height: 100vh; padding: 28px clamp(24px, 7vw, 112px) 24px; display: flex; flex-direction: column; background: radial-gradient(circle at 86% 18%, rgba(224, 157, 87, .22), transparent 26%), linear-gradient(135deg, #e8f0e7 0%, #f5f0df 100%); }
 .site-header, .site-footer { display: flex; align-items: center; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
 .site-header { gap: 13px; }
-.mark { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #193c3a; border-radius: 50%; font-family: 'Playfair Display', serif; font-size: 17px; text-transform: none; }
+.mark { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; box-shadow: 0 4px 12px rgba(25, 60, 58, .2); }
 .brand { font-weight: 500; }
 .issue { margin-left: auto; opacity: .65; }
 .quote-box { width: min(790px, 100%); margin: auto; padding: clamp(30px, 7vw, 74px) 0 clamp(35px, 7vw, 72px); animation: rise .7s ease both; }
