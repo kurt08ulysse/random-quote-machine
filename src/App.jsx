@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 
 const quotes = [
@@ -11,8 +11,30 @@ const quotes = [
 
 function App() {
   const [quoteIndex, setQuoteIndex] = useState(() => Math.floor(Math.random() * quotes.length))
-  const quote = quotes[quoteIndex]
+  const [quote, setQuote] = useState(() => quotes[quoteIndex])
   const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`“${quote.text}” — ${quote.author}`)}`
+
+  useEffect(() => {
+    fetch('https://dummyjson.com/quotes/random')
+      .then((response) => {
+        if (!response.ok) throw new Error('Quote request failed')
+        return response.json()
+      })
+      .then((remoteQuote) => setQuote({ text: remoteQuote.quote, author: remoteQuote.author }))
+      .catch(() => {})
+  }, [])
+
+  function showNewQuote() {
+    setQuoteIndex((current) => (current + 1) % quotes.length)
+    setQuote(quotes[(quoteIndex + 1) % quotes.length])
+    fetch('https://dummyjson.com/quotes/random')
+      .then((response) => {
+        if (!response.ok) throw new Error('Quote request failed')
+        return response.json()
+      })
+      .then((remoteQuote) => setQuote({ text: remoteQuote.quote, author: remoteQuote.author }))
+      .catch(() => {})
+  }
 
   return (
     <main className="page-shell">
@@ -29,7 +51,7 @@ function App() {
         </div>
         <div className="quote-actions">
           <a id="tweet-quote" href={tweetUrl} target="_blank" rel="noreferrer" aria-label="Tweet the current quote"><span aria-hidden="true">↗</span> Share this thought</a>
-          <button id="new-quote" type="button" onClick={() => setQuoteIndex((current) => (current + 1) % quotes.length)}>New quote <span aria-hidden="true">→</span></button>
+          <button id="new-quote" type="button" onClick={showNewQuote}>New quote <span aria-hidden="true">→</span></button>
         </div>
       </section>
       <footer className="site-footer"><span>Words for slower moments</span><span className="footer-dot" aria-hidden="true">·</span><span>Designed and built by Kurt Ulysse</span></footer>
