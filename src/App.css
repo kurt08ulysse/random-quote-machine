@@ -1,0 +1,27 @@
+#root { min-height: 100vh; }
+.page-shell { min-height: 100vh; padding: 28px clamp(24px, 7vw, 112px) 24px; display: flex; flex-direction: column; background: radial-gradient(circle at 86% 18%, rgba(224, 157, 87, .22), transparent 26%), linear-gradient(135deg, #e8f0e7 0%, #f5f0df 100%); }
+.site-header, .site-footer { display: flex; align-items: center; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.site-header { gap: 13px; }
+.mark { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #193c3a; border-radius: 50%; font-family: 'Playfair Display', serif; font-size: 17px; text-transform: none; }
+.brand { font-weight: 500; }
+.issue { margin-left: auto; opacity: .65; }
+.quote-box { width: min(790px, 100%); margin: auto; padding: clamp(30px, 7vw, 74px) 0 clamp(35px, 7vw, 72px); animation: rise .7s ease both; }
+.quote-intro { display: flex; align-items: center; gap: 18px; color: #b15f39; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.rule { height: 1px; flex: 1; background: rgba(25, 60, 58, .24); }
+.quote-content { display: flex; gap: clamp(14px, 4vw, 39px); margin-top: clamp(32px, 7vw, 64px); }
+.quote-symbol { color: #d48b59; font-family: 'Playfair Display', serif; font-size: clamp(72px, 11vw, 122px); line-height: .75; }
+.quote-copy { max-width: 675px; }
+#text { margin: 0; font-family: 'Playfair Display', serif; font-size: clamp(34px, 5.3vw, 64px); line-height: 1.08; letter-spacing: -.02em; }
+#author { margin: 29px 0 0; color: #b15f39; font-family: 'DM Mono', monospace; font-size: 12px; letter-spacing: .04em; }
+.quote-actions { display: flex; align-items: center; gap: 28px; margin: clamp(42px, 7vw, 70px) 0 0 92px; }
+.quote-actions a, #new-quote { border: 0; color: #193c3a; font-size: 13px; text-decoration: none; cursor: pointer; }
+.quote-actions a { opacity: .72; }
+.quote-actions a span { color: #b15f39; font-size: 18px; margin-right: 5px; }
+#new-quote { padding: 14px 18px; background: #193c3a; color: #f5f0df; transition: transform .2s, background .2s; }
+#new-quote span { margin-left: 18px; color: #e6a46d; font-size: 17px; }
+#new-quote:hover, #new-quote:focus-visible { background: #b15f39; transform: translateY(-2px); }
+#new-quote:focus-visible, #tweet-quote:focus-visible { outline: 2px solid #b15f39; outline-offset: 4px; }
+.site-footer { justify-content: center; gap: 14px; color: rgba(25, 60, 58, .58); }
+.footer-dot { color: #b15f39; font-size: 18px; }
+@keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 560px) { .page-shell { padding: 20px; } .quote-content { gap: 10px; } .quote-symbol { font-size: 67px; } .quote-actions { flex-direction: column-reverse; align-items: flex-start; margin-left: 42px; gap: 23px; } .site-footer { font-size: 9px; } }
