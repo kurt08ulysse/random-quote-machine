@@ -7,6 +7,10 @@ const quotes = [
   { text: 'Everything you can imagine is real.', author: 'Pablo Picasso' },
   { text: 'It always seems impossible until it’s done.', author: 'Nelson Mandela' },
   { text: 'We are what we repeatedly do. Excellence, then, is not an act, but a habit.', author: 'Aristotle' },
+  { text: 'Le vieux se chauffe avec le bois qu’il a coupé dans sa jeunesse.', author: 'Proverbe gabonais' },
+  { text: 'Un seul doigt ne peut pas laver le visage.', author: 'Proverbe gabonais' },
+  { text: 'La rivière qui coule ne porte pas toujours de l’eau claire.', author: 'Proverbe gabonais' },
+  { text: 'Celui qui marche seul va plus vite, mais celui qui marche avec les autres va plus loin.', author: 'Proverbe gabonais' },
 ]
 
 function App() {
