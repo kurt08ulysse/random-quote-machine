@@ -32,7 +32,7 @@ function App() {
           <button id="new-quote" type="button" onClick={() => setQuoteIndex((current) => (current + 1) % quotes.length)}>New quote <span aria-hidden="true">→</span></button>
         </div>
       </section>
-      <footer className="site-footer"><span>Words for slower moments</span><span className="footer-dot" aria-hidden="true">·</span><span>Made for today</span></footer>
+      <footer className="site-footer"><span>Words for slower moments</span><span className="footer-dot" aria-hidden="true">·</span><span>Designed and built by Kurt Ulysse</span></footer>
     </main>
   )
 }
